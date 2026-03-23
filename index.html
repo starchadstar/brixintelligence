@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html lang="en">
+<head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><title>Brix Intelligence</title></head>
+<body style="margin:0;padding:20px;background:#1a1a1a;">
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=Jost:wght@200;300;400&display=swap');
+  .hero-wrap {
+    position: relative; width: 100%; min-height: 520px; background: #0e0a07;
+    overflow: hidden; font-family: 'Jost', sans-serif;
+    display: flex; align-items: center; justify-content: flex-start; border-radius: 12px;
+  }
+  .bg-scene { position: absolute; inset: 0; z-index: 0; }
+  .overlay-gradient {
+    position: absolute; inset: 0;
+    background: linear-gradient(105deg, rgba(14,10,7,0.97) 35%, rgba(14,10,7,0.55) 62%, rgba(14,10,7,0.08) 100%);
+    z-index: 2;
+  }
+  .content { position: relative; z-index: 3; padding: 3rem 3.5rem; max-width: 560px; }
+  .eyebrow {
+    font-family: 'Jost', sans-serif; font-weight: 200; font-size: 11px;
+    letter-spacing: 0.28em; color: #c9a96e; text-transform: uppercase;
+    margin-bottom: 1.2rem; display: flex; align-items: center; gap: 10px;
+  }
+  .eyebrow::before { content: ''; display: inline-block; width: 28px; height: 0.5px; background: #c9a96e; }
+  .brand-name {
+    font-family: 'Cormorant Garamond', serif; font-weight: 300; font-size: 62px;
+    line-height: 1.0; color: #f5efe6; margin: 0 0 0.3rem; letter-spacing: 0.02em;
+  }
+  .brand-name span { color: #c9a96e; font-style: italic; font-weight: 400; }
+  .tagline {
+    font-family: 'Cormorant Garamond', serif; font-style: italic; font-weight: 300;
+    font-size: 17px; color: #a89070; margin: 0.8rem 0 2rem; line-height: 1.5; letter-spacing: 0.01em;
+  }
+  .divider { width: 48px; height: 0.5px; background: #c9a96e; margin: 1.5rem 0; opacity: 0.6; }
+  .descriptor {
+    font-family: 'Jost', sans-serif; font-weight: 300; font-size: 13px;
+    color: #8a7560; line-height: 1.8; letter-spacing: 0.04em; margin-bottom: 2.2rem;
+  }
+  .pills { display: flex; gap: 8px; flex-wrap: wrap; margin-bottom: 2.2rem; }
+  .pill {
+    font-family: 'Jost', sans-serif; font-weight: 300; font-size: 10px;
+    letter-spacing: 0.2em; text-transform: uppercase; color: #c9a96e;
+    border: 0.5px solid rgba(201,169,110,0.35); padding: 5px 14px; border-radius: 2px;
+  }
+  .cta-row { display: flex; align-items: center; gap: 20px; }
+  .cta-btn {
+    font-family: 'Jost', sans-serif; font-weight: 300; font-size: 11px;
+    letter-spacing: 0.22em; text-transform: uppercase; color: #0e0a07;
+    background: #c9a96e; padding: 13px 30px; border: none; border-radius: 2px; cursor: pointer;
+  }
+  .cta-link {
+    font-family: 'Jost', sans-serif; font-weight: 300; font-size: 11px;
+    letter-spacing: 0.18em; text-transform: uppercase; color: #8a7560;
+    text-decoration: none; display: flex; align-items: center; gap: 8px;
+  }
+  .location-tag {
+    font-family: 'Jost', sans-serif; font-weight: 200; font-size: 10px;
+    letter-spacing: 0.22em; text-transform: uppercase; color: rgba(201,169,110,0.45);
+    display: flex; align-items: center; gap: 7px; margin-top: 0.9rem;
+  }
+  .location-tag::before {
+    content: ''; display: inline-block; width: 4px; height: 4px;
+    border-radius: 50%; background: rgba(201,169,110,0.45);
+  }
+</style>
+
+<div class="hero-wrap">
+  <div class="bg-scene">
+    <svg width="100%" height="100%" viewBox="0 0 900 520" preserveAspectRatio="xMidYMid slice" xmlns="http://www.w3.org/2000/svg">
+      <defs>
+        <radialGradient id="bg1" cx="70%" cy="45%" r="45%">
+          <stop offset="0%" stop-color="#3d1e06" stop-opacity="0.5"/>
+          <stop offset="100%" stop-color="#0e0a07" stop-opacity="0"/>
+        </radialGradient>
+        <linearGradient id="oakBody" x1="0%" y1="0%" x2="100%" y2="0%">
+          <stop offset="0%"   stop-color="#1a0e06"/>
+          <stop offset="6%"   stop-color="#5c3a18"/>
+          <stop offset="14%"  stop-color="#a07840"/>
+          <stop offset="24%"  stop-color="#c8a060"/>
+          <stop offset="34%"  stop-color="#ddb870"/>
+          <stop offset="44%"  stop-color="#e8c87a"/>
+          <stop offset="52%"  stop-color="#ecd080"/>
+          <stop offset="60%"  stop-color="#e0be6e"/>
+          <stop offset="70%"  stop-color="#c89850"/>
+          <stop offset="80%"  stop-color="#a07030"/>
+          <stop offset="90%"  stop-color="#6a4018"/>
+          <stop offset="100%" stop-color="#1e1006"/>
+        </linearGradient>
+        <radialGradient id="headOak" cx="45%" cy="40%" r="65%">
+          <stop offset="0%"   stop-color="#ddb460"/>
+          <stop offset="50%"  stop-color="#b8902e"/>
+          <stop offset="100%" stop-color="#7a5018"/>
+        </radialGradient>
+        <linearGradient id="blackBand" x1="0%" y1="0%" x2="0%" y2="100%">
+          <stop offset="0%"   stop-color="#383838"/>
+          <stop offset="25%"  stop-color="#181818"/>
+          <stop offset="55%"  stop-color="#0a0a0a"/>
+          <stop offset="100%" stop-color="#202020"/>
+        </linearGradient>
+        <clipPath id="bclip2">
+          <path d="M538 265 Q524 168 548 102 Q576 76 660 73 Q744 76 772 102 Q796 168 782 265 Q796 362 772 428 Q744 454 660 457 Q576 454 548 428 Q524 362 538 265 Z"/>
+        </clipPath>
+        <linearGradient id="rightShadow" x1="0%" y1="0%" x2="100%" y2="0%">
+          <stop offset="0%"   stop-color="#0a0604" stop-opacity="0"/>
+          <stop offset="100%" stop-color="#060402" stop-opacity="0.65"/>
+        </linearGradient>
+      </defs>
+
+      <rect width="900" height="520" fill="#0e0a07"/>
+      <rect width="900" height="520" fill="url(#bg1)"/>
+
+      <path d="M538 265 Q524 168 548 102 Q576 76 660 73 Q744 76 772 102 Q796 168 782 265 Q796 362 772 428 Q744 454 660 457 Q576 454 548 428 Q524 362 538 265 Z" fill="url(#oakBody)"/>
+
+      <g clip-path="url(#bclip2)" stroke="#2e1206" stroke-width="0.7" fill="none" opacity="0.35">
+        <path d="M572 76 Q564 265 572 454"/>
+        <path d="M590 74 Q583 265 590 456"/>
+        <path d="M608 73 Q602 265 608 457"/>
+        <path d="M626 73 Q621 265 626 457"/>
+        <path d="M644 73 Q640 265 644 457"/>
+        <path d="M662 73 Q659 265 662 457"/>
+        <path d="M680 73 Q678 265 680 457"/>
+        <path d="M698 73 Q697 265 698 457"/>
+        <path d="M716 73 Q716 265 716 457"/>
+        <path d="M734 74 Q735 265 734 456"/>
+        <path d="M752 76 Q754 265 752 454"/>
+        <path d="M768 80 Q772 265 768 450"/>
+      </g>
+
+      <g clip-path="url(#bclip2)" stroke="#b89040" stroke-width="0.4" fill="none" opacity="0.12">
+        <path d="M524 160 Q660 148 796 160"/>
+        <path d="M524 200 Q660 188 796 200"/>
+        <path d="M524 240 Q660 228 796 240"/>
+        <path d="M524 290 Q660 302 796 290"/>
+        <path d="M524 330 Q660 342 796 330"/>
+        <path d="M524 370 Q660 382 796 370"/>
+      </g>
+
+      <path d="M538 265 Q524 168 548 102 Q576 76 660 73 Q744 76 772 102 Q796 168 782 265 Q796 362 772 428 Q744 454 660 457 Q576 454 548 428 Q524 362 538 265 Z" fill="url(#rightShadow)"/>
+      <path d="M538 265 Q524 168 548 102 Q576 76 610 74 Q580 80 556 108 Q534 168 534 265 Q534 362 556 422 Q580 450 610 456 Q576 454 548 428 Q524 362 538 265 Z" fill="#ffe090" opacity="0.06"/>
+
+      <ellipse cx="660" cy="80" rx="112" ry="22" fill="url(#headOak)"/>
+      <g stroke="#8a6020" stroke-width="0.6" fill="none" opacity="0.4">
+        <line x1="598" y1="72" x2="598" y2="88"/>
+        <line x1="616" y1="69" x2="616" y2="91"/>
+        <line x1="634" y1="67" x2="634" y2="93"/>
+        <line x1="652" y1="66" x2="652" y2="94"/>
+        <line x1="670" y1="66" x2="670" y2="94"/>
+        <line x1="688" y1="67" x2="688" y2="93"/>
+        <line x1="706" y1="69" x2="706" y2="91"/>
+        <line x1="724" y1="72" x2="724" y2="88"/>
+      </g>
+      <ellipse cx="660" cy="80" rx="112" ry="22" fill="none" stroke="#7a5010" stroke-width="1"/>
+      <ellipse cx="660" cy="80" rx="8" ry="4" fill="#0a0604" stroke="#5a3a10" stroke-width="1.2"/>
+      <ellipse cx="660" cy="80" rx="4.5" ry="2.2" fill="#060402"/>
+      <ellipse cx="660" cy="450" rx="112" ry="20" fill="#3a2008" stroke="#2a1606" stroke-width="1"/>
+
+      <!-- TOP BAND -->
+      <ellipse cx="660" cy="110" rx="110" ry="18" fill="url(#blackBand)" stroke="#080808" stroke-width="0.5"/>
+      <ellipse cx="660" cy="105" rx="109" ry="16" fill="none" stroke="#444" stroke-width="0.5" stroke-opacity="0.4"/>
+      <ellipse cx="551" cy="110" rx="6" ry="5" fill="#1a1a1a" stroke="#080808" stroke-width="1"/>
+      <ellipse cx="769" cy="110" rx="6" ry="5" fill="#1a1a1a" stroke="#080808" stroke-width="1"/>
+
+      <!-- UPPER BAND -->
+      <ellipse cx="660" cy="188" rx="122" ry="19" fill="url(#blackBand)" stroke="#080808" stroke-width="0.5"/>
+      <ellipse cx="660" cy="183" rx="121" ry="17" fill="none" stroke="#444" stroke-width="0.5" stroke-opacity="0.4"/>
+      <ellipse cx="538" cy="188" rx="7" ry="5" fill="#1a1a1a" stroke="#080808" stroke-width="1"/>
+      <ellipse cx="782" cy="188" rx="7" ry="5" fill="#1a1a1a" stroke="#080808" stroke-width="1"/>
+
+      <!-- CENTRE BELLY BAND REMOVED — stamp area clear -->
+
+      <!-- LOWER BAND -->
+      <ellipse cx="660" cy="342" rx="122" ry="19" fill="url(#blackBand)" stroke="#080808" stroke-width="0.5"/>
+      <ellipse cx="660" cy="337" rx="121" ry="17" fill="none" stroke="#444" stroke-width="0.5" stroke-opacity="0.4"/>
+      <ellipse cx="538" cy="342" rx="7" ry="5" fill="#1a1a1a" stroke="#080808" stroke-width="1"/>
+      <ellipse cx="782" cy="342" rx="7" ry="5" fill="#1a1a1a" stroke="#080808" stroke-width="1"/>
+
+      <!-- BOTTOM BAND -->
+      <ellipse cx="660" cy="420" rx="110" ry="18" fill="url(#blackBand)" stroke="#080808" stroke-width="0.5"/>
+      <ellipse cx="660" cy="415" rx="109" ry="16" fill="none" stroke="#444" stroke-width="0.5" stroke-opacity="0.4"/>
+      <ellipse cx="551" cy="420" rx="6" ry="5" fill="#1a1a1a" stroke="#080808" stroke-width="1"/>
+      <ellipse cx="769" cy="420" rx="6" ry="5" fill="#1a1a1a" stroke="#080808" stroke-width="1"/>
+
+      <!-- BRIX INTELLIGENCE STAMP — no circle, no background -->
+      <!-- BRIX: black fill, gold outline — 22 * 1.11 = 24.4 -->
+      <text x="660" y="256" text-anchor="middle" font-family="Georgia, 'Times New Roman', serif" font-size="24.4" font-weight="700" fill="#000000" stroke="#c9a96e" stroke-width="0.6" paint-order="stroke" letter-spacing="6">BRIX</text>
+      <!-- Divider -->
+      <line x1="612" y1="266" x2="708" y2="266" stroke="#c9a96e" stroke-width="1" stroke-opacity="0.85"/>
+      <polygon points="612,266 617,262 622,266 617,270" fill="#c9a96e" fill-opacity="0.85"/>
+      <polygon points="698,266 703,262 708,266 703,270" fill="#c9a96e" fill-opacity="0.85"/>
+      <!-- INTELLIGENCE: black fill, gold outline — 10 * 1.11 = 11.1 -->
+      <text x="660" y="281" text-anchor="middle" font-family="Georgia, 'Times New Roman', serif" font-size="11.1" font-weight="700" fill="#000000" stroke="#c9a96e" stroke-width="0.4" paint-order="stroke" letter-spacing="3">INTELLIGENCE</text>
+      <!-- SOUTHERN OREGON: black fill, gold outline — 7.5 * 1.11 = 8.3 -->
+      <text x="660" y="295" text-anchor="middle" font-family="Georgia, 'Times New Roman', serif" font-size="8.3" font-weight="400" fill="#000000" stroke="#c9a96e" stroke-width="0.3" paint-order="stroke" letter-spacing="1.8">SOUTHERN OREGON</text>
+
+      <line x1="475" y1="205" x2="528" y2="205" stroke="#c9a96e" stroke-width="0.4" stroke-opacity="0.22"/>
+      <line x1="455" y1="225" x2="528" y2="225" stroke="#c9a96e" stroke-width="0.4" stroke-opacity="0.14"/>
+      <line x1="480" y1="245" x2="528" y2="245" stroke="#c9a96e" stroke-width="0.4" stroke-opacity="0.18"/>
+      <line x1="460" y1="265" x2="528" y2="265" stroke="#c9a96e" stroke-width="0.4" stroke-opacity="0.10"/>
+      <line x1="475" y1="285" x2="528" y2="285" stroke="#c9a96e" stroke-width="0.4" stroke-opacity="0.18"/>
+      <line x1="458" y1="305" x2="528" y2="305" stroke="#c9a96e" stroke-width="0.4" stroke-opacity="0.14"/>
+
+      <circle cx="492" cy="105" r="1.2" fill="#c9a96e" fill-opacity="0.08"/>
+      <circle cx="512" cy="105" r="1.2" fill="#c9a96e" fill-opacity="0.08"/>
+      <circle cx="532" cy="105" r="1.2" fill="#c9a96e" fill-opacity="0.08"/>
+      <circle cx="492" cy="125" r="1.2" fill="#c9a96e" fill-opacity="0.08"/>
+      <circle cx="512" cy="125" r="1.2" fill="#c9a96e" fill-opacity="0.08"/>
+      <circle cx="532" cy="125" r="1.2" fill="#c9a96e" fill-opacity="0.08"/>
+      <circle cx="492" cy="145" r="1.2" fill="#c9a96e" fill-opacity="0.08"/>
+      <circle cx="512" cy="145" r="1.2" fill="#c9a96e" fill-opacity="0.08"/>
+      <circle cx="532" cy="145" r="1.2" fill="#c9a96e" fill-opacity="0.08"/>
+
+      <path d="M0 420 Q80 370 160 390 Q240 405 320 380 Q400 355 450 370 Q500 380 540 420 L540 520 L0 520 Z" fill="#120a05" opacity="0.6"/>
+      <path d="M0 440 Q60 415 140 425 Q220 435 280 415 Q340 395 400 410 Q440 420 480 430 L480 520 L0 520 Z" fill="#0a0604" opacity="0.8"/>
+      <line x1="50" y1="412" x2="290" y2="408" stroke="#1e1008" stroke-width="0.7" stroke-opacity="0.5"/>
+      <line x1="50" y1="420" x2="290" y2="416" stroke="#1e1008" stroke-width="0.7" stroke-opacity="0.5"/>
+      <line x1="50" y1="428" x2="290" y2="424" stroke="#1e1008" stroke-width="0.7" stroke-opacity="0.4"/>
+    </svg>
+  </div>
+
+  <div class="overlay-gradient"></div>
+
+  <div class="content">
+    <div class="eyebrow">Southern Oregon Wine Country</div>
+    <div class="brand-name">Brix<span>Intelligence</span></div>
+    <div class="tagline">Precision-crafted AI solutions,<br>from vine to dashboard.</div>
+    <div class="divider"></div>
+    <div class="descriptor">
+      Where winery membership meets intelligent automation.<br>
+      Custom AI built for the craft of wine.
+    </div>
+    <div class="pills">
+      <div class="pill">Winery Memberships</div>
+      <div class="pill">AI Integration</div>
+      <div class="pill">Custom Dashboards</div>
+      <div class="pill">Rogue Valley AVA</div>
+    </div>
+    <div class="cta-row">
+      <a class="cta-btn" href="mailto:chad.m.derosier@gmail.com" style="text-decoration:none;">Contact</a>
+      <a class="cta-link" href="#">Coming Soon</a>
+    </div>
+    <div class="location-tag">Rogue &amp; Applegate Valley · Oregon</div>
+  </div>
+</div>
+</body>
+</html>
